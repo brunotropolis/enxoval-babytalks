@@ -4,366 +4,340 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Enxoval Descomplicado · Guia completo para gestantes · Baby Talks</title>
-<meta name="description" content="Baixe o e-book gratuito Enxoval Descomplicado da Dayane Dos Anjos e monte um enxoval realmente completo — sem exageros nem esquecimentos." />
+<title>Enxoval Descomplicado · Baby Talks</title>
+<meta name="description" content="Baixe o e-book gratuito de enxoval da Dayane Dos Anjos. Um guia completo para gestantes." />
 <meta property="og:title" content="Enxoval Descomplicado · Baby Talks" />
-<meta property="og:description" content="O guia gratuito da Dayane Dos Anjos pra você montar um enxoval completo — sem exagero, sem esquecimento." />
+<meta property="og:description" content="O guia gratuito da Dayane Dos Anjos para montar um enxoval completo, sem exagero e sem esquecimento." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://enxoval.babytalks.com.br/og-image.jpg" />
 <meta property="og:url" content="https://enxoval.babytalks.com.br/" />
 <link rel="icon" type="image/x-icon" href="https://babytalks.com.br/favicon.ico" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=DM+Sans:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=DM+Sans:wght@400;500;600;700&display=swap" />
 <style>
   :root {
     --lilas: #8E9BD1;
+    --lilas-claro: #B0BCE5;
     --lilas-escuro: #6F7EB8;
     --magenta: #C95FA3;
-    --magenta-escuro: #9B3775;
+    --magenta-suave: #D89FC4;
     --azul: #1F2A56;
     --azul-suave: rgba(31, 42, 86, 0.7);
+    --azul-medio: rgba(31, 42, 86, 0.5);
     --branco-suave: #F8F7F4;
     --rosa-bebe: #F4DCE8;
     --lavanda: #E4E6F2;
     --verde: #2EA66C;
     --verde-bright: #3FBE7E;
+    --border: rgba(142, 155, 209, 0.22);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--azul);
-    color: var(--branco-suave);
-    line-height: 1.55;
+    background: var(--branco-suave);
+    color: var(--azul);
+    line-height: 1.7;
+    font-weight: 400;
+    letter-spacing: 0.005em;
     -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* padrão sutil de itens de bebê no fundo (usa a capa) */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background: radial-gradient(ellipse at top, rgba(142, 155, 209, 0.14) 0%, transparent 60%),
-                radial-gradient(ellipse at bottom right, rgba(201, 95, 163, 0.10) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
+  @keyframes pulse-soft {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(46, 166, 108, 0.45); }
+    50% { box-shadow: 0 0 0 12px rgba(46, 166, 108, 0); }
   }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-  .container {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 24px;
-    position: relative;
-    z-index: 1;
+  /* ============ NAV ============ */
+  nav {
+    background: rgba(248, 247, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
   }
-
-  /* ============ HEADER ============ */
-  .site-header {
-    padding: 24px 0 12px;
-    text-align: center;
+  .nav-inner {
+    max-width: 1120px; margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
   }
-  .logo-badge {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.36em; text-transform: uppercase;
-    color: var(--lilas);
-    padding: 8px 20px;
-    border: 1px solid rgba(142, 155, 209, 0.32);
-    border-radius: 100px;
+  .nav-logo { text-decoration: none; display: inline-flex; align-items: center; }
+  .nav-logo img { height: 44px; width: auto; display: block; }
+  .nav-info { text-align: right; line-height: 1.25; }
+  .nav-info .data {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px; letter-spacing: 0.14em;
+    color: var(--magenta); text-transform: uppercase;
+  }
+  .nav-info .chamada {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 12px; color: var(--azul-suave); margin-top: 2px;
   }
 
   /* ============ HERO ============ */
   .hero {
-    padding: 32px 0 60px;
+    background: linear-gradient(180deg, var(--lilas-claro) 0%, var(--lavanda) 55%, var(--branco-suave) 100%);
+    padding: 56px 0 88px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-layout {
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 340px;
     gap: 64px;
     align-items: center;
   }
-  .hero-content { max-width: 560px; }
   .hero-tag {
     display: inline-block;
-    background: rgba(201, 95, 163, 0.18);
-    color: var(--rosa-bebe);
-    padding: 8px 18px;
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--magenta);
+    padding: 5px 14px;
+    background: white;
     border-radius: 100px;
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.32em; text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 8px rgba(31, 42, 86, 0.06);
   }
-  .hero-title {
+  .hero-headline {
     font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 48px;
+    font-size: 46px;
     line-height: 1.08;
-    letter-spacing: -0.012em;
-    color: var(--branco-suave);
-    margin-bottom: 24px;
-  }
-  .hero-title .destaque {
-    color: var(--rosa-bebe);
+    color: var(--azul);
+    letter-spacing: -0.018em;
+    margin-bottom: 18px;
     font-weight: 600;
   }
+  .hero-headline .accent { color: var(--magenta); font-style: italic; font-weight: 500; }
   .hero-desc {
-    font-size: 18px;
-    color: rgba(248, 247, 244, 0.82);
+    font-size: 16px;
+    color: var(--azul-suave);
+    line-height: 1.7;
     margin-bottom: 32px;
-    line-height: 1.6;
+    max-width: 480px;
   }
-  .hero-desc strong { color: var(--branco-suave); font-weight: 600; }
-  .hero-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 0;
-  }
-  .hero-bullet {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 15px;
-    color: rgba(248, 247, 244, 0.88);
-  }
-  .hero-bullet::before {
-    content: '✓';
-    display: inline-block;
-    flex-shrink: 0;
-    width: 22px; height: 22px;
-    background: var(--verde);
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 22px;
-    margin-top: 1px;
-  }
+  .hero-desc strong { color: var(--azul); font-weight: 600; }
 
-  /* ============ CAPA MOCK ============ */
-  .hero-capa {
+  /* capa do e-book — shape orgânica como as fotos do site principal */
+  .ebook-cover-wrap {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 1200px;
+    padding: 20px;
   }
-  .capa-wrap {
-    position: relative;
-    transform: rotate(-4deg);
+  .ebook-cover {
+    border-radius: 80px 16px 60px 16px;
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(31, 42, 86, 0.18);
+    background: var(--lavanda);
+    aspect-ratio: 0.72;
+    transform: rotate(-2.5deg);
     transition: transform 0.4s ease;
   }
-  .capa-wrap:hover { transform: rotate(-2deg) translateY(-4px); }
-  .capa-wrap img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-    border-radius: 14px;
-    box-shadow:
-      0 40px 90px rgba(0, 0, 0, 0.55),
-      0 12px 32px rgba(0, 0, 0, 0.32),
-      -6px 0 20px rgba(0, 0, 0, 0.24);
+  .ebook-cover:hover { transform: rotate(-1deg) translateY(-4px); }
+  .ebook-cover img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  .capa-badge {
+  .ebook-selo {
     position: absolute;
-    top: -18px;
-    right: -18px;
+    top: 4px; right: 4px;
     background: var(--magenta);
     color: white;
-    padding: 12px 20px;
+    padding: 8px 16px;
     border-radius: 100px;
-    font-size: 11px; font-weight: 800;
+    font-size: 10px; font-weight: 700;
     letter-spacing: 0.24em; text-transform: uppercase;
-    box-shadow: 0 14px 30px rgba(201, 95, 163, 0.4);
+    box-shadow: 0 8px 20px rgba(201, 95, 163, 0.32);
     transform: rotate(6deg);
   }
 
-  /* ============ FORM CARD ============ */
+  /* ============ FORM ============ */
   .form-section {
-    padding: 20px 0 80px;
-  }
-  .form-card {
+    padding: 72px 0 96px;
     background: var(--branco-suave);
-    color: var(--azul);
-    border-radius: 24px;
-    padding: 44px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
-    max-width: 600px;
+  }
+  .form-wrap {
+    max-width: 520px;
     margin: 0 auto;
+  }
+  .form-eyebrow {
+    display: block;
+    text-align: center;
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--magenta);
+    margin-bottom: 12px;
   }
   .form-title {
     font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1.2;
-    color: var(--azul);
-    margin-bottom: 8px;
     text-align: center;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--azul);
+    letter-spacing: -0.012em;
+    font-weight: 600;
+    margin-bottom: 8px;
   }
   .form-sub {
     text-align: center;
     color: var(--azul-suave);
-    font-size: 15px;
-    margin-bottom: 28px;
+    font-size: 14.5px;
+    margin-bottom: 32px;
   }
-  .form-group { margin-bottom: 20px; }
-  .form-label {
+  form { display: flex; flex-direction: column; gap: 14px; }
+  .field label {
     display: block;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--azul);
-    margin-bottom: 8px;
-    letter-spacing: 0.02em;
-  }
-  .form-input,
-  .form-select {
-    width: 100%;
-    padding: 14px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    color: var(--azul);
-    background: white;
-    border: 1.5px solid var(--lavanda);
-    border-radius: 12px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .form-input:focus,
-  .form-select:focus {
-    outline: none;
-    border-color: var(--magenta);
-    box-shadow: 0 0 0 3px rgba(201, 95, 163, 0.15);
-  }
-  .form-input.error {
-    border-color: #d9455f;
-    background: #fff5f7;
-  }
-  .form-error {
-    display: none;
-    color: #d9455f;
-    font-size: 13px;
-    margin-top: 6px;
-  }
-  .form-input.error + .form-error { display: block; }
-
-  .trimestre-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .trimestre-opt {
-    position: relative;
-  }
-  .trimestre-opt input { position: absolute; opacity: 0; pointer-events: none; }
-  .trimestre-opt label {
-    display: block;
-    padding: 14px 12px;
-    text-align: center;
-    background: white;
-    border: 1.5px solid var(--lavanda);
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--azul);
-    transition: all 0.2s ease;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
   }
-  .trimestre-opt input:checked + label {
-    background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-escuro) 100%);
-    border-color: var(--magenta-escuro);
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--azul);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field input:focus {
+    outline: none;
+    border-color: var(--magenta);
+    box-shadow: 0 0 0 3px rgba(201, 95, 163, 0.12);
+  }
+  .field input.error {
+    border-color: #d9455f;
+    background: #fff8f9;
+  }
+  .field .err {
+    display: none;
+    font-size: 12px;
+    color: #d9455f;
+    margin-top: 5px;
+  }
+  .field input.error ~ .err { display: block; }
+
+  .tri-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .tri-opt { position: relative; }
+  .tri-opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .tri-opt label {
+    display: block;
+    text-align: center;
+    padding: 11px 8px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: var(--azul);
+    cursor: pointer;
+    transition: all 0.18s ease;
+    line-height: 1.2;
+  }
+  .tri-opt label:hover { border-color: var(--lilas); }
+  .tri-opt input:checked + label {
+    background: var(--azul);
+    border-color: var(--azul);
     color: white;
-    box-shadow: 0 8px 20px rgba(201, 95, 163, 0.32);
-    transform: translateY(-1px);
+    font-weight: 600;
   }
-  .trimestre-opt label:hover { border-color: var(--magenta); }
 
   .btn-submit {
-    width: 100%;
-    padding: 18px 24px;
-    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-bright) 100%);
+    margin-top: 10px;
+    padding: 15px 24px;
+    background: var(--verde);
+    border: 2px solid var(--verde);
     color: white;
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 12px;
+    font-size: 13.5px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 12px;
-    box-shadow: 0 12px 32px rgba(46, 166, 108, 0.32);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse-soft 2.4s ease-in-out infinite;
+    transition: background 0.2s, border-color 0.2s;
   }
-  .btn-submit:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(46, 166, 108, 0.42);
-  }
-  .btn-submit:disabled { opacity: 0.6; cursor: wait; }
+  .btn-submit:hover:not(:disabled) { background: var(--verde-bright); border-color: var(--verde-bright); }
+  .btn-submit:disabled { opacity: 0.65; cursor: wait; animation: none; }
 
-  .privacy-note {
+  .privacy {
+    display: block;
     text-align: center;
     font-size: 12px;
-    color: var(--azul-suave);
-    margin-top: 16px;
+    color: var(--azul-medio);
+    margin-top: 14px;
     line-height: 1.5;
   }
 
-  .footer {
-    padding: 24px 0 32px;
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 20px 0 26px;
     text-align: center;
-    font-size: 13px;
-    color: rgba(228, 230, 242, 0.55);
+    font-size: 12px;
+    color: var(--azul-medio);
+    border-top: 1px solid var(--border);
   }
-  .footer a { color: var(--lilas); text-decoration: none; }
+  footer a { color: var(--lilas-escuro); text-decoration: none; }
+  footer a:hover { color: var(--magenta); }
 
   /* ============ MOBILE ============ */
-  @media (max-width: 900px) {
-    .hero {
+  @media (max-width: 860px) {
+    .hero { padding: 32px 0 56px; }
+    .hero-layout {
       grid-template-columns: 1fr;
-      gap: 40px;
-      padding: 24px 0 40px;
+      gap: 32px;
       text-align: center;
     }
-    .hero-content { max-width: 100%; }
-    .hero-title { font-size: 34px; }
-    .hero-desc { font-size: 16px; }
-    .hero-bullets { max-width: 380px; margin: 0 auto; text-align: left; }
-    .hero-capa { order: -1; }
-    .capa-wrap img { max-width: 240px; }
-    .form-card { padding: 32px 24px; }
+    .hero-content { order: 2; }
+    .ebook-cover-wrap { order: 1; max-width: 220px; margin: 0 auto; padding: 12px; }
+    .hero-headline { font-size: 32px; }
+    .hero-desc { font-size: 15px; margin: 0 auto 24px; }
+    .form-section { padding: 48px 0 64px; }
     .form-title { font-size: 24px; }
-    .trimestre-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .nav-logo img { height: 36px; }
+    .nav-info .data { font-size: 13px; }
+    .nav-info .chamada { display: none; }
+    .hero-headline { font-size: 28px; }
   }
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <span class="logo-badge">Baby Talks · presente pra você</span>
+<nav>
+  <div class="nav-inner">
+    <a href="https://babytalks.com.br" class="nav-logo" target="_blank" rel="noopener">
+      <img src="https://babytalks.com.br/images/logo-baby-talks.png" alt="Baby Talks" />
+    </a>
+    <div class="nav-info">
+      <div class="data"><span>22 · AGO</span></div>
+      <div class="chamada">Teatro Santo Anjo, Curitiba</div>
+    </div>
   </div>
-</header>
+</nav>
 
 <section class="hero">
-  <div class="container" style="display:contents;">
-    <div class="hero-content">
-      <span class="hero-tag">E-book gratuito</span>
-      <h1 class="hero-title">Baby Talks quer que você tenha o <span class="destaque">enxoval completo</span> — sem exageros, sem esquecimentos.</h1>
-      <p class="hero-desc">Um guia carinhoso e detalhado da <strong>Dayane Dos Anjos</strong> pra você montar o enxoval do seu bebê com clareza, economia e a certeza de que nada essencial vai faltar.</p>
-      <ul class="hero-bullets">
-        <li class="hero-bullet">Listas por categoria — roupinhas, higiene, quarto, saída da maternidade</li>
-        <li class="hero-bullet">O que realmente precisa (e o que a indústria vende que você não vai usar)</li>
-        <li class="hero-bullet">Opinião sincera sobre cada item, pra você comprar com segurança</li>
-      </ul>
-    </div>
-    <div class="hero-capa">
-      <div class="capa-wrap">
-        <span class="capa-badge">Grátis</span>
-        <img src="ebook-capa.jpg" alt="Capa do e-book Enxoval Descomplicado — Baby Talks">
+  <div class="container">
+    <div class="hero-layout">
+      <div class="hero-content">
+        <span class="hero-tag">E-book gratuito</span>
+        <h1 class="hero-headline">
+          Um enxoval <span class="accent">completo</span>, sem exageros.
+        </h1>
+        <p class="hero-desc">
+          Um guia carinhoso da <strong>Dayane Dos Anjos</strong> para você montar o enxoval do seu bebê com clareza e economia, sabendo o que realmente precisa (e o que a indústria vende que você não vai usar).
+        </p>
+      </div>
+      <div class="ebook-cover-wrap">
+        <div class="ebook-cover">
+          <img src="ebook-capa.jpg" alt="Capa do e-book Enxoval Descomplicado" />
+        </div>
+        <span class="ebook-selo">Grátis</span>
       </div>
     </div>
   </div>
@@ -371,65 +345,51 @@
 
 <section class="form-section">
   <div class="container">
-    <div class="form-card">
-      <h2 class="form-title">Receba o e-book agora</h2>
-      <p class="form-sub">Preencha os dados e libere o download.</p>
+    <div class="form-wrap">
+      <span class="form-eyebrow">Receba agora</span>
+      <h2 class="form-title">Onde a gente envia?</h2>
+      <p class="form-sub">Preencha e libere o download.</p>
 
       <form id="lead-form" novalidate>
-        <div class="form-group">
-          <label class="form-label" for="nome">Seu nome</label>
-          <input type="text" id="nome" name="nome" class="form-input" placeholder="Como podemos te chamar?" autocomplete="given-name" required>
-          <span class="form-error">Escreve seu primeiro nome, por favor.</span>
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" autocomplete="given-name" required />
+          <span class="err">Escreve seu primeiro nome.</span>
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="telefone">WhatsApp com DDD</label>
-          <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(41) 99999-9999" inputmode="numeric" autocomplete="tel" required>
-          <span class="form-error">Verifica seu número, por favor — DDD + 8 ou 9 dígitos.</span>
+        <div class="field">
+          <label for="telefone">WhatsApp com DDD</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(41) 99999-9999" inputmode="numeric" autocomplete="tel" required />
+          <span class="err">Confere seu número: DDD + 8 ou 9 dígitos.</span>
         </div>
 
-        <div class="form-group">
-          <label class="form-label">Em que fase da gestação você está?</label>
-          <div class="trimestre-grid">
-            <div class="trimestre-opt">
-              <input type="radio" id="tri-1" name="trimestre" value="primeiro" required>
-              <label for="tri-1">1º trimestre</label>
-            </div>
-            <div class="trimestre-opt">
-              <input type="radio" id="tri-2" name="trimestre" value="segundo">
-              <label for="tri-2">2º trimestre</label>
-            </div>
-            <div class="trimestre-opt">
-              <input type="radio" id="tri-3" name="trimestre" value="terceiro">
-              <label for="tri-3">3º trimestre</label>
-            </div>
-            <div class="trimestre-opt">
-              <input type="radio" id="tri-4" name="trimestre" value="bebe_chegou">
-              <label for="tri-4">Bebê já chegou 👶</label>
-            </div>
+        <div class="field">
+          <label>Fase da gestação</label>
+          <div class="tri-grid">
+            <div class="tri-opt"><input type="radio" id="tri-1" name="trimestre" value="primeiro" required><label for="tri-1">1º trimestre</label></div>
+            <div class="tri-opt"><input type="radio" id="tri-2" name="trimestre" value="segundo"><label for="tri-2">2º trimestre</label></div>
+            <div class="tri-opt"><input type="radio" id="tri-3" name="trimestre" value="terceiro"><label for="tri-3">3º trimestre</label></div>
+            <div class="tri-opt"><input type="radio" id="tri-4" name="trimestre" value="bebe_chegou"><label for="tri-4">Bebê já chegou</label></div>
           </div>
-          <span class="form-error" id="tri-error">Escolhe uma opção, por favor.</span>
+          <span class="err" id="tri-err">Escolhe uma opção.</span>
         </div>
 
-        <button type="submit" class="btn-submit" id="submit-btn">Quero o e-book grátis</button>
-        <p class="privacy-note">Seus dados são usados só para enviar o e-book e novidades do Baby Talks. Não compartilhamos com ninguém.</p>
+        <button type="submit" class="btn-submit" id="submit-btn">Quero o e-book</button>
+        <span class="privacy">Seus dados servem só para enviar o e-book e novidades do Baby Talks.</span>
       </form>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    Baby Talks · <a href="https://babytalks.com.br" target="_blank">babytalks.com.br</a> · 22 de agosto de 2026 · Curitiba
-  </div>
+<footer>
+  Baby Talks · <a href="https://babytalks.com.br" target="_blank">babytalks.com.br</a> · 22 de agosto · Curitiba
 </footer>
 
 <script>
   const WEBHOOK_URL = 'https://n8n-n8n.xktssy.easypanel.host/webhook/enxoval-lead';
 
-  // === máscara de telefone ===
-  const telInput = document.getElementById('telefone');
-  telInput.addEventListener('input', (e) => {
+  const tel = document.getElementById('telefone');
+  tel.addEventListener('input', (e) => {
     let v = e.target.value.replace(/\D/g, '').slice(0, 11);
     if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
     else if (v.length > 6) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
@@ -438,46 +398,28 @@
     e.target.value = v;
     e.target.classList.remove('error');
   });
+  document.getElementById('nome').addEventListener('input', (e) => e.target.classList.remove('error'));
 
-  // === validação telefone ===
   function isTelefoneValido(raw) {
-    const digits = raw.replace(/\D/g, '');
-    if (digits.length < 10 || digits.length > 11) return false;
-    // 3+ dígitos repetidos seguidos (11111 / 00000)
-    if (/(\d)\1{4,}/.test(digits)) return false;
-    // DDD deve ser 11-99 (o 1º dígito não pode ser 0)
-    const ddd = parseInt(digits.slice(0, 2), 10);
+    const d = raw.replace(/\D/g, '');
+    if (d.length < 10 || d.length > 11) return false;
+    if (/(\d)\1{4,}/.test(d)) return false;
+    const ddd = parseInt(d.slice(0, 2), 10);
     if (ddd < 11 || ddd > 99) return false;
-    // se 11 dígitos, o 3º precisa ser 9 (celular BR)
-    if (digits.length === 11 && digits[2] !== '9') return false;
-    // sequência óbvia (123456, 987654)
-    if (/012345|123456|234567|345678|456789|987654|876543/.test(digits)) return false;
+    if (d.length === 11 && d[2] !== '9') return false;
+    if (/012345|123456|234567|345678|456789|987654|876543/.test(d)) return false;
     return true;
   }
 
-  function limpaErro(el) { el.classList.remove('error'); }
-  document.getElementById('nome').addEventListener('input', (e) => limpaErro(e.target));
-
-  // === submit ===
   document.getElementById('lead-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const nome = document.getElementById('nome');
-    const tel = document.getElementById('telefone');
     const trimestre = document.querySelector('input[name="trimestre"]:checked');
     let ok = true;
-
-    if (!nome.value.trim() || nome.value.trim().length < 2) {
-      nome.classList.add('error'); ok = false;
-    }
-    if (!isTelefoneValido(tel.value)) {
-      tel.classList.add('error'); ok = false;
-    }
-    if (!trimestre) {
-      document.getElementById('tri-error').style.display = 'block';
-      ok = false;
-    } else {
-      document.getElementById('tri-error').style.display = 'none';
-    }
+    if (!nome.value.trim() || nome.value.trim().length < 2) { nome.classList.add('error'); ok = false; }
+    if (!isTelefoneValido(tel.value)) { tel.classList.add('error'); ok = false; }
+    if (!trimestre) { document.getElementById('tri-err').style.display = 'block'; ok = false; }
+    else document.getElementById('tri-err').style.display = 'none';
     if (!ok) return;
 
     const btn = document.getElementById('submit-btn');
@@ -485,18 +427,15 @@
     btn.textContent = 'Enviando...';
 
     const telDigits = tel.value.replace(/\D/g, '');
-    const ddd = telDigits.slice(0, 2);
     const payload = {
       nome: nome.value.trim(),
       telefone: telDigits,
-      ddd: ddd,
+      ddd: telDigits.slice(0, 2),
       trimestre: trimestre.value,
       origem: 'ebook-enxoval',
       criado_em: new Date().toISOString(),
       user_agent: navigator.userAgent
     };
-
-    // salva no sessionStorage p/ a página download personalizar
     sessionStorage.setItem('ebook-lead', JSON.stringify(payload));
 
     try {
@@ -504,12 +443,9 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        // fire-and-forget se der erro de CORS/network — a gente já salvou local
         mode: 'cors'
       });
-    } catch (err) {
-      console.warn('webhook falhou (segue pra download mesmo assim)', err);
-    }
+    } catch (err) { console.warn(err); }
 
     window.location.href = '/download.html';
   });
