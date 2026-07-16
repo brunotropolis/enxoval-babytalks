@@ -16,6 +16,7 @@
     --lilas-escuro: #6F7EB8;
     --magenta: #C95FA3;
     --magenta-suave: #D89FC4;
+    --magenta-escuro: #9B3775;
     --azul: #1F2A56;
     --azul-suave: rgba(31, 42, 86, 0.7);
     --azul-medio: rgba(31, 42, 86, 0.5);
@@ -34,6 +35,7 @@
     color: var(--azul);
     line-height: 1.7;
     font-weight: 400;
+    letter-spacing: 0.005em;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -43,34 +45,10 @@
   }
   .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-  /* ============ NAV ============ */
-  nav {
-    background: rgba(248, 247, 244, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    position: sticky; top: 0; z-index: 100;
-  }
-  .nav-inner {
-    max-width: 1120px; margin: 0 auto;
-    padding: 14px 24px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .nav-logo img { height: 44px; width: auto; display: block; }
-  .nav-info { text-align: right; line-height: 1.25; }
-  .nav-info .data {
-    font-family: 'Anton', sans-serif;
-    font-size: 15px; letter-spacing: 0.14em;
-    color: var(--magenta); text-transform: uppercase;
-  }
-  .nav-info .chamada {
-    font-family: 'Fraunces', serif; font-style: italic;
-    font-size: 12px; color: var(--azul-suave); margin-top: 2px;
-  }
-
-  /* ============ HERO CONFIRMAÇÃO ============ */
+  /* ============ CONFIRM ============ */
   .confirm {
     background: linear-gradient(180deg, var(--lilas-claro) 0%, var(--lavanda) 55%, var(--branco-suave) 100%);
-    padding: 72px 0 88px;
+    padding: 64px 0 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -107,7 +85,7 @@
     font-size: 16px;
     color: var(--azul-suave);
     max-width: 500px;
-    margin: 0 auto 36px;
+    margin: 0 auto 32px;
   }
   .btn-download {
     display: inline-flex;
@@ -135,66 +113,82 @@
     letter-spacing: 0.02em;
   }
 
-  /* ============ CONVITE EVENTO (seção limpa) ============ */
+  /* ============ CONVITE (colado no download) ============ */
   .convite {
-    padding: 88px 0;
+    padding: 32px 0 88px;
     background: var(--branco-suave);
   }
-  .convite-layout {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 900px;
+  .convite-inner {
+    max-width: 920px;
     margin: 0 auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 48px;
+    box-shadow: 0 20px 50px rgba(31, 42, 86, 0.08);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    align-items: center;
   }
   .convite-foto {
     aspect-ratio: 0.82;
-    border-radius: 80px 16px 60px 16px;
+    border-radius: 60px 12px 46px 12px;
     overflow: hidden;
     background: var(--lavanda);
-    box-shadow: 0 22px 48px rgba(31, 42, 86, 0.14);
+    box-shadow: 0 14px 32px rgba(31, 42, 86, 0.14);
   }
   .convite-foto img {
     width: 100%; height: 100%; object-fit: cover; display: block;
-    object-position: center 30%;
+    object-position: center 25%;
   }
   .convite-tag {
     display: inline-block;
-    font-size: 10.5px; font-weight: 700;
-    letter-spacing: 0.28em; text-transform: uppercase;
+    background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-escuro) 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-family: 'Anton', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(201, 95, 163, 0.32);
+  }
+  .convite-tag.geral {
+    background: transparent;
     color: var(--magenta);
-    margin-bottom: 14px;
+    border: 1.5px solid var(--magenta-suave);
+    box-shadow: none;
+    font-size: 11px;
   }
   .convite-title {
     font-family: 'Fraunces', serif;
-    font-size: 34px;
+    font-size: 32px;
     line-height: 1.12;
     color: var(--azul);
     letter-spacing: -0.015em;
     font-weight: 600;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .convite-title .accent { color: var(--magenta); font-style: italic; font-weight: 500; }
   .convite-desc {
-    font-size: 15.5px;
+    font-size: 15px;
     color: var(--azul-suave);
     line-height: 1.7;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
   .convite-desc strong { color: var(--azul); font-weight: 600; }
   .convite-dados {
     display: flex;
     flex-wrap: wrap;
     gap: 6px 22px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     font-size: 13.5px;
     color: var(--azul-suave);
   }
   .convite-dados .item {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
   }
   .convite-dados .item::before {
     content: '';
@@ -202,15 +196,9 @@
     background: var(--magenta);
     display: inline-block;
   }
-  .btns-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  .btns-row { display: flex; gap: 10px; flex-wrap: wrap; }
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
     padding: 12px 24px;
     font-family: 'DM Sans', sans-serif;
     font-size: 13px; font-weight: 700;
@@ -222,78 +210,117 @@
     transition: all 0.2s;
   }
   .btn.primary {
-    background: var(--magenta);
-    color: white;
-    border-color: var(--magenta);
+    background: var(--magenta); color: white; border-color: var(--magenta);
   }
   .btn.primary:hover { background: var(--magenta-suave); border-color: var(--magenta-suave); }
   .btn.ghost {
-    background: transparent;
-    color: var(--azul);
-    border-color: var(--border);
+    background: transparent; color: var(--azul); border-color: var(--border);
   }
   .btn.ghost:hover { border-color: var(--lilas); color: var(--magenta); }
   .btn svg { width: 15px; height: 15px; }
 
-  /* ============ FOOTER ============ */
-  footer {
-    padding: 20px 0 26px;
+  /* ============ FOOTER EVENTO (mesmo do index) ============ */
+  footer.evento-footer {
+    background: var(--azul);
+    color: white;
+    padding: 48px 0 40px;
     text-align: center;
-    font-size: 12px;
-    color: var(--azul-medio);
-    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
-  footer a { color: var(--lilas-escuro); text-decoration: none; }
-  footer a:hover { color: var(--magenta); }
+  footer.evento-footer::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at top, rgba(201, 95, 163, 0.14) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .evento-inner {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+  }
+  .evento-logo img { height: 84px; width: auto; display: block; }
+  .evento-eyebrow {
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--magenta-suave);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .evento-eyebrow::before, .evento-eyebrow::after {
+    content: ''; display: inline-block;
+    width: 32px; height: 1px;
+    background: rgba(255, 255, 255, 0.28);
+  }
+  .evento-data {
+    font-family: 'Fraunces', serif;
+    font-style: italic; font-weight: 500;
+    font-size: 28px; line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .evento-data .destaque { color: var(--magenta-suave); }
+  .evento-local {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 480px;
+    line-height: 1.55;
+  }
+  .evento-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 4px;
+    padding: 12px 26px;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.32);
+    color: white;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+  }
+  .evento-cta:hover {
+    background: white; color: var(--azul); border-color: white;
+  }
+  .evento-cta svg { width: 14px; height: 14px; }
+  .evento-fine {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.42);
+    letter-spacing: 0.06em;
+    margin-top: 18px;
+  }
 
   /* ============ MOBILE ============ */
   @media (max-width: 720px) {
-    .confirm { padding: 48px 0 60px; }
+    .confirm { padding: 40px 0 32px; }
     .confirm-title { font-size: 30px; }
-    .confirm-sub { font-size: 15px; }
-    .convite { padding: 56px 0; }
-    .convite-layout {
+    .confirm-sub { font-size: 15px; margin-bottom: 26px; }
+    .btn-download { padding: 14px 24px; font-size: 12.5px; }
+    .convite { padding: 24px 0 56px; }
+    .convite-inner {
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: 24px;
+      padding: 28px 22px;
       text-align: center;
     }
     .convite-foto {
-      max-width: 240px;
+      max-width: 200px;
       margin: 0 auto;
       aspect-ratio: 1;
+      border-radius: 44px 10px 32px 10px;
     }
-    .convite-title { font-size: 26px; }
-    .convite-desc { font-size: 15px; }
+    .convite-title { font-size: 24px; }
+    .convite-desc { font-size: 14.5px; }
     .convite-dados { justify-content: center; }
     .btns-row { justify-content: center; }
-  }
-  @media (max-width: 480px) {
-    .nav-logo img { height: 36px; }
-    .nav-info .chamada { display: none; }
-    .confirm-title { font-size: 26px; }
-    .btn-download { padding: 14px 22px; font-size: 12.5px; }
+    .btn { padding: 11px 20px; font-size: 12px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="https://babytalks.com.br" class="nav-logo" target="_blank" rel="noopener">
-      <img src="https://babytalks.com.br/images/logo-baby-talks.png" alt="Baby Talks" />
-    </a>
-    <div class="nav-info">
-      <div class="data"><span>22 · AGO</span></div>
-      <div class="chamada">Teatro Santo Anjo, Curitiba</div>
-    </div>
-  </div>
-</nav>
-
 <section class="confirm">
   <div class="container">
     <span class="confirm-eyebrow"><span class="dot"></span> Pronto</span>
     <h1 class="confirm-title">Seu e-book <span class="accent" id="nome-personalizado">está aqui</span></h1>
-    <p class="confirm-sub">O guia <em>Enxoval Descomplicado</em> tá esperando por você. Baixe e leia com calma.</p>
     <a href="/ebook-enxoval-descomplicado.pdf" class="btn-download" download="Enxoval-Descomplicado-Baby-Talks.pdf">
       <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
       Baixar o e-book
@@ -306,13 +333,26 @@
   <!-- injetado via JS conforme DDD -->
 </section>
 
-<footer>
-  Baby Talks · <a href="https://babytalks.com.br" target="_blank">babytalks.com.br</a> · 22 de agosto · Curitiba
+<footer class="evento-footer">
+  <div class="container">
+    <div class="evento-inner">
+      <a href="https://babytalks.com.br" target="_blank" rel="noopener" class="evento-logo">
+        <img src="https://babytalks.com.br/images/logo-baby-talks-dark.png" alt="Baby Talks" onerror="this.src='https://babytalks.com.br/images/logo-baby-talks.png';this.style.filter='brightness(0) invert(1)'" />
+      </a>
+      <span class="evento-eyebrow">Save the date</span>
+      <div class="evento-data">Sábado, <span class="destaque">22 de agosto</span> de 2026</div>
+      <div class="evento-local">Teatro Santo Anjo, Barigui · Curitiba/PR</div>
+      <a href="https://babytalks.com.br" target="_blank" rel="noopener" class="evento-cta">
+        Conheça o evento
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <span class="evento-fine">babytalks.com.br</span>
+    </div>
+  </div>
 </footer>
 
 <script>
   const EVENTO_URL = 'https://babytalks.com.br';
-  const INGRESSO_URL = 'https://www.diskingressos.com.br/event/3351';
   const FOTO_EVENTO = 'https://babytalks.com.br/images/dayane.jpg';
 
   const lead = JSON.parse(sessionStorage.getItem('ebook-lead') || '{}');
@@ -320,14 +360,11 @@
   const nome = (lead.nome || '').split(' ')[0];
   const isCwb = ddd === '41';
 
-  // personalização do título
   if (nome) {
-    const el = document.getElementById('nome-personalizado');
-    el.textContent = 'chegou, ' + nome;
+    document.getElementById('nome-personalizado').textContent = 'chegou, ' + nome;
   }
 
   const box = document.getElementById('convite-box');
-
   const dadosBase = `
     <div class="convite-dados">
       <span class="item">Sábado, 22 de agosto</span>
@@ -338,21 +375,20 @@
   if (isCwb) {
     box.innerHTML = `
       <div class="container">
-        <div class="convite-layout">
+        <div class="convite-inner">
           <div class="convite-foto"><img src="${FOTO_EVENTO}" alt="Dayane Dos Anjos" /></div>
           <div>
-            <span class="convite-tag">Você é de Curitiba</span>
-            <h2 class="convite-title">Vem <span class="accent">viver</span> o Baby Talks presencialmente</h2>
+            <span class="convite-tag">Você é de Curitiba!</span>
+            <h2 class="convite-title">E o <span class="accent">Baby Talks</span> vai ser aqui do seu lado</h2>
             <p class="convite-desc">
               Se o e-book já te ajuda, imagina uma manhã inteira com a <strong>Dayane</strong> e outros especialistas te preparando para a chegada do bebê, ao vivo.
             </p>
             ${dadosBase}
             <div class="btns-row">
-              <a href="${INGRESSO_URL}" target="_blank" rel="noopener" class="btn primary">
+              <a href="${EVENTO_URL}" target="_blank" rel="noopener" class="btn primary">
                 Ver ingressos
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
-              <a href="${EVENTO_URL}" target="_blank" rel="noopener" class="btn ghost">Conhecer o evento</a>
             </div>
           </div>
         </div>
@@ -360,10 +396,10 @@
   } else {
     box.innerHTML = `
       <div class="container">
-        <div class="convite-layout">
+        <div class="convite-inner">
           <div class="convite-foto"><img src="${FOTO_EVENTO}" alt="Dayane Dos Anjos" /></div>
           <div>
-            <span class="convite-tag">Baby Talks · 22 de agosto</span>
+            <span class="convite-tag geral">Baby Talks · 22 de agosto</span>
             <h2 class="convite-title">Vem nos <span class="accent">visitar</span> em Curitiba</h2>
             <p class="convite-desc">
               O <strong>Baby Talks</strong> é um evento presencial: uma manhã inteira de preparação com a <strong>Dayane</strong> e outros especialistas para casais grávidos. Se você conhece alguém da região, passa o link.
