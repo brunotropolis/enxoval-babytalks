@@ -374,9 +374,11 @@
   const EVENTO_URL = 'https://babytalks.com.br';
   const FOTO_EVENTO = 'https://babytalks.com.br/images/dayane.jpg';
 
+  // Aceita override via query string (?ddd=41&nome=Day) — usado pra preview
+  const qs = new URLSearchParams(location.search);
   const lead = JSON.parse(sessionStorage.getItem('ebook-lead') || '{}');
-  const ddd = lead.ddd || '';
-  const nome = (lead.nome || '').split(' ')[0];
+  const ddd = qs.get('ddd') || lead.ddd || '';
+  const nome = ((qs.get('nome') || lead.nome || '').split(' ')[0]);
   const isCwb = ddd === '41';
 
   if (nome) {
@@ -400,7 +402,7 @@
             <span class="convite-tag"><span class="pin"></span> Você é de Curitiba</span>
             <h2 class="convite-title">E o <span class="accent">Baby Talks</span> vai ser aqui do seu lado</h2>
             <p class="convite-desc">
-              Se o e-book já te ajuda, imagina uma manhã inteira com a <strong>Dayane</strong> e outros especialistas te preparando para a chegada do bebê, ao vivo.
+              Se o e-book já te ajuda, imagina uma manhã inteira com a <strong>Dayane</strong> e outras especialistas te preparando para a chegada do bebê, ao vivo.
             </p>
             ${dadosBase}
             <div class="btns-row">
@@ -421,7 +423,7 @@
             <span class="convite-tag geral">Baby Talks · 22 de agosto</span>
             <h2 class="convite-title">Venha nos <span class="accent">visitar</span> em Curitiba</h2>
             <p class="convite-desc">
-              O <strong>Baby Talks</strong> é um evento presencial: uma manhã inteira de preparação com a <strong>Dayane</strong> e outros especialistas para casais grávidos.
+              O <strong>Baby Talks</strong> é um evento presencial: uma manhã inteira de preparação com a <strong>Dayane</strong> e outras especialistas para casais grávidos.
             </p>
             <p class="convite-quote">
               Se você conhece uma gestante em Curitiba, ou que quer ir, <strong>compartilhe</strong>:
