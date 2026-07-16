@@ -127,7 +127,7 @@
     padding: 40px 48px;
     box-shadow: 0 20px 50px rgba(31, 42, 86, 0.08);
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 40px;
     align-items: center;
   }
@@ -141,6 +141,41 @@
   .convite-foto img {
     width: 100%; height: 100%; object-fit: cover; display: block;
     object-position: center 25%;
+  }
+  /* grid 2x2 das palestrantes */
+  .palestrantes-quad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .pal-card {
+    text-align: center;
+  }
+  .pal-foto {
+    aspect-ratio: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--lavanda);
+    box-shadow: 0 8px 20px rgba(31, 42, 86, 0.10);
+    margin-bottom: 8px;
+  }
+  .pal-foto img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    object-position: center 20%;
+  }
+  .pal-nome {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--azul);
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .pal-role {
+    font-size: 11px;
+    color: var(--azul-suave);
+    line-height: 1.35;
+    letter-spacing: 0.01em;
   }
   .convite-tag {
     display: inline-flex;
@@ -326,6 +361,9 @@
       aspect-ratio: 1;
       border-radius: 44px 10px 32px 10px;
     }
+    .palestrantes-quad { max-width: 320px; margin: 0 auto; gap: 10px; }
+    .pal-nome { font-size: 13px; }
+    .pal-role { font-size: 10.5px; }
     .convite-title { font-size: 24px; }
     .convite-desc { font-size: 14.5px; }
     .convite-dados { justify-content: center; }
@@ -394,15 +432,26 @@
     </div>`;
 
   if (isCwb) {
+    const palestrantes = [
+      { nome: 'Dayane Dos Anjos', role: 'Sono & Amamentação', img: 'https://babytalks.com.br/images/dayane.jpg' },
+      { nome: 'Patricia Moreira', role: 'Educadora em Saúde', img: 'https://babytalks.com.br/images/palestrante-patricia.jpg' },
+      { nome: 'Alline Vieira', role: 'Fisio pélvica & Doula', img: 'https://babytalks.com.br/images/palestrante-alline.jpg' },
+      { nome: 'Dra. Juliana Chalupe', role: 'Ginecologista e Obstetra', img: 'https://babytalks.com.br/images/palestrante-juliana.jpg' }
+    ];
+    const quad = palestrantes.map(p => `
+      <div class="pal-card">
+        <div class="pal-foto"><img src="${p.img}" alt="${p.nome}" /></div>
+        <div class="pal-nome">${p.nome}</div>
+        <div class="pal-role">${p.role}</div>
+      </div>`).join('');
     box.innerHTML = `
       <div class="container">
         <div class="convite-inner">
-          <div class="convite-foto"><img src="${FOTO_EVENTO}" alt="Dayane Dos Anjos" /></div>
+          <div class="palestrantes-quad">${quad}</div>
           <div>
-            <span class="convite-tag"><span class="pin"></span> Você é de Curitiba</span>
-            <h2 class="convite-title">E o <span class="accent">Baby Talks</span> vai ser aqui do seu lado</h2>
+            <h2 class="convite-title">Você já garantiu sua <span class="accent">vaga</span> no Baby Talks?</h2>
             <p class="convite-desc">
-              Se o e-book já te ajuda, imagina uma manhã inteira com a <strong>Dayane</strong> e outras especialistas te preparando para a chegada do bebê, ao vivo.
+              Um seminário no <strong>Teatro Santo Anjo</strong>, com as melhores especialistas de maternidade, para te preparar para a chegada do seu bebê!
             </p>
             ${dadosBase}
             <div class="btns-row">
