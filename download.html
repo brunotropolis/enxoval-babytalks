@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Seu e-book está pronto · Baby Talks</title>
+<link rel="icon" type="image/x-icon" href="https://babytalks.com.br/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=DM+Sans:wght@400;500;600;700&display=swap" />
+<style>
+  :root {
+    --lilas: #8E9BD1;
+    --lilas-escuro: #6F7EB8;
+    --magenta: #C95FA3;
+    --magenta-escuro: #9B3775;
+    --azul: #1F2A56;
+    --azul-suave: rgba(31, 42, 86, 0.7);
+    --branco-suave: #F8F7F4;
+    --rosa-bebe: #F4DCE8;
+    --lavanda: #E4E6F2;
+    --verde: #2EA66C;
+    --verde-bright: #3FBE7E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--azul);
+    color: var(--branco-suave);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at top, rgba(142, 155, 209, 0.14) 0%, transparent 60%),
+                radial-gradient(ellipse at bottom right, rgba(201, 95, 163, 0.10) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-header { padding: 24px 0 12px; text-align: center; }
+  .logo-badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--lilas);
+    padding: 8px 20px;
+    border: 1px solid rgba(142, 155, 209, 0.32);
+    border-radius: 100px;
+  }
+
+  /* ============ CONFIRMAÇÃO HERO ============ */
+  .confirm-hero {
+    padding: 48px 0 32px;
+    text-align: center;
+  }
+  .check-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-bright) 100%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 44px rgba(46, 166, 108, 0.42);
+  }
+  .check-icon svg { width: 36px; height: 36px; }
+  .confirm-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    margin-bottom: 14px;
+  }
+  .confirm-title .destaque { color: var(--rosa-bebe); font-weight: 600; }
+  .confirm-nome { color: var(--rosa-bebe); }
+  .confirm-sub {
+    font-size: 17px;
+    color: rgba(248, 247, 244, 0.82);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ============ BOTÃO DOWNLOAD GIGANTE ============ */
+  .download-wrap {
+    padding: 32px 0 48px;
+    text-align: center;
+  }
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 22px 44px;
+    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-bright) 100%);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 20px 50px rgba(46, 166, 108, 0.42);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: pulse-btn 2.4s ease-in-out infinite;
+  }
+  .btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 60px rgba(46, 166, 108, 0.52);
+  }
+  .btn-download svg { width: 26px; height: 26px; }
+  @keyframes pulse-btn {
+    0%, 100% { box-shadow: 0 20px 50px rgba(46, 166, 108, 0.42); }
+    50% { box-shadow: 0 20px 50px rgba(46, 166, 108, 0.62), 0 0 0 8px rgba(63, 190, 126, 0.15); }
+  }
+  .download-nota {
+    display: block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: rgba(248, 247, 244, 0.62);
+  }
+
+  /* ============ CONVITE EVENTO ============ */
+  .convite {
+    background: linear-gradient(135deg, rgba(201, 95, 163, 0.14) 0%, rgba(142, 155, 209, 0.10) 100%);
+    border: 1px solid rgba(201, 95, 163, 0.28);
+    border-radius: 24px;
+    padding: 40px 32px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .convite-tag {
+    display: inline-block;
+    background: var(--magenta);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .convite-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .convite-title .destaque { color: var(--rosa-bebe); font-weight: 600; }
+  .convite-desc {
+    font-size: 16px;
+    color: rgba(248, 247, 244, 0.85);
+    max-width: 520px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+  }
+  .convite-dados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 20px 0 26px;
+    font-size: 14px;
+    color: var(--lilas);
+  }
+  .convite-dados span::before { content: '·'; margin-right: 18px; color: var(--magenta); }
+  .convite-dados span:first-child::before { content: none; margin: 0; }
+
+  .btn-convite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 36px;
+    background: white;
+    color: var(--azul);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  }
+  .btn-convite:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+  }
+  .btn-convite.secondary {
+    background: transparent;
+    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: none;
+  }
+  .btn-convite.secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: white;
+  }
+  .btn-convite svg { width: 18px; height: 18px; }
+
+  .btns-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    padding: 24px 0 32px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(228, 230, 242, 0.55);
+  }
+  .footer a { color: var(--lilas); text-decoration: none; }
+
+  /* ========== MOBILE ========== */
+  @media (max-width: 700px) {
+    .confirm-title { font-size: 30px; }
+    .confirm-sub { font-size: 15px; }
+    .btn-download { padding: 18px 28px; font-size: 15px; }
+    .convite { padding: 32px 22px; }
+    .convite-title { font-size: 24px; }
+    .convite-desc { font-size: 15px; }
+    .btn-convite { padding: 14px 22px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <span class="logo-badge">Baby Talks · deu certo!</span>
+  </div>
+</header>
+
+<section class="confirm-hero">
+  <div class="container">
+    <div class="check-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h1 class="confirm-title">Pronto<span class="confirm-nome" id="nome-saudacao"></span>, seu <span class="destaque">e-book está aqui</span>.</h1>
+    <p class="confirm-sub">O guia <em>Enxoval Descomplicado</em> tá esperando por você. Baixe e leia com calma — foi feito com carinho pra te acompanhar nessa reta.</p>
+  </div>
+</section>
+
+<section class="download-wrap">
+  <div class="container">
+    <a href="/ebook-enxoval-descomplicado.pdf" class="btn-download" download="Enxoval-Descomplicado-Baby-Talks.pdf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Baixar o e-book agora
+    </a>
+    <span class="download-nota">PDF · ~4 MB · abre em qualquer celular ou computador</span>
+  </div>
+</section>
+
+<!-- ============ CONVITE EVENTO — muda conforme DDD ============ -->
+<section class="container">
+  <div class="convite" id="convite-box">
+    <!-- preenchido via JS conforme DDD -->
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    Baby Talks · <a href="https://babytalks.com.br" target="_blank">babytalks.com.br</a> · 22 de agosto de 2026 · Curitiba
+  </div>
+</footer>
+
+<script>
+  const EVENTO_URL = 'https://babytalks.com.br';
+  const INGRESSO_URL = 'https://www.diskingressos.com.br/event/3351';
+
+  const lead = JSON.parse(sessionStorage.getItem('ebook-lead') || '{}');
+  const ddd = lead.ddd || '';
+  const nome = (lead.nome || '').split(' ')[0]; // só o 1º nome
+  const isCuritiba = ddd === '41';
+
+  // saudação personalizada
+  if (nome) {
+    document.getElementById('nome-saudacao').textContent = ', ' + nome;
+  }
+
+  const conviteBox = document.getElementById('convite-box');
+
+  if (isCuritiba) {
+    conviteBox.innerHTML = `
+      <span class="convite-tag">Você é de Curitiba!</span>
+      <h2 class="convite-title">Vem <span class="destaque">viver o Baby Talks</span> com a gente</h2>
+      <p class="convite-desc">
+        Se o e-book já te ajudou, imagina uma manhã inteira com a <strong>Dayane</strong> e outros especialistas
+        te preparando pra chegada do bebê — cara a cara, no Teatro Santo Anjo Barigui.
+      </p>
+      <div class="convite-dados">
+        <span>📅 Sábado, 22 de agosto</span>
+        <span>🕣 8h30 às 13h30</span>
+        <span>📍 Teatro Santo Anjo · Barigui</span>
+      </div>
+      <div class="btns-row">
+        <a href="${INGRESSO_URL}" target="_blank" rel="noopener" class="btn-convite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"></path><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Ver ingressos
+        </a>
+        <a href="${EVENTO_URL}" target="_blank" rel="noopener" class="btn-convite secondary">
+          Conhecer o evento
+        </a>
+      </div>
+    `;
+  } else {
+    conviteBox.innerHTML = `
+      <span class="convite-tag">Baby Talks · 22 de agosto</span>
+      <h2 class="convite-title">Vem nos <span class="destaque">visitar em Curitiba</span> — ou compartilha com quem é daqui</h2>
+      <p class="convite-desc">
+        O <strong>Baby Talks</strong> é um evento presencial em Curitiba: uma manhã inteira de preparação com a
+        <strong>Dayane</strong> e outros especialistas pra casais grávidos.
+        Se você conhece alguém da região que vai gostar, passa o link 💛
+      </p>
+      <div class="convite-dados">
+        <span>📅 Sábado, 22 de agosto</span>
+        <span>📍 Teatro Santo Anjo · Barigui · Curitiba</span>
+      </div>
+      <div class="btns-row">
+        <button type="button" class="btn-convite" id="btn-share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          Compartilhar o link
+        </button>
+        <a href="${EVENTO_URL}" target="_blank" rel="noopener" class="btn-convite secondary">
+          Conhecer o evento
+        </a>
+      </div>
+    `;
+
+    // handler de share
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const shareData = {
+        title: 'Baby Talks · 22 de agosto, Curitiba',
+        text: 'Achei esse evento pra gestantes em Curitiba, super legal — dá uma olhada:',
+        url: EVENTO_URL
+      };
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(EVENTO_URL);
+          const btn = document.getElementById('btn-share');
+          const orig = btn.innerHTML;
+          btn.innerHTML = '<span>✓ Link copiado!</span>';
+          setTimeout(() => btn.innerHTML = orig, 2500);
+        }
+      } catch (e) { /* user cancelou, ok */ }
+    });
+  }
+</script>
+
+</body>
+</html>
