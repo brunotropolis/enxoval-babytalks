@@ -143,24 +143,43 @@
     object-position: center 25%;
   }
   .convite-tag {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-escuro) 100%);
-    color: white;
-    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--rosa-bebe);
+    color: var(--magenta-escuro);
+    padding: 7px 16px 7px 14px;
     border-radius: 100px;
-    font-family: 'Anton', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.22em;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     margin-bottom: 16px;
-    box-shadow: 0 8px 20px rgba(201, 95, 163, 0.32);
+  }
+  .convite-tag .pin {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--magenta);
   }
   .convite-tag.geral {
     background: transparent;
     color: var(--magenta);
     border: 1.5px solid var(--magenta-suave);
-    box-shadow: none;
     font-size: 11px;
+  }
+  .convite-tag.geral .pin { display: none; }
+  .convite-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--azul);
+    padding: 14px 18px;
+    background: var(--branco-suave);
+    border-left: 3px solid var(--magenta);
+    border-radius: 4px;
+    margin-bottom: 20px;
   }
   .convite-title {
     font-family: 'Fraunces', serif;
@@ -378,7 +397,7 @@
         <div class="convite-inner">
           <div class="convite-foto"><img src="${FOTO_EVENTO}" alt="Dayane Dos Anjos" /></div>
           <div>
-            <span class="convite-tag">Você é de Curitiba!</span>
+            <span class="convite-tag"><span class="pin"></span> Você é de Curitiba</span>
             <h2 class="convite-title">E o <span class="accent">Baby Talks</span> vai ser aqui do seu lado</h2>
             <p class="convite-desc">
               Se o e-book já te ajuda, imagina uma manhã inteira com a <strong>Dayane</strong> e outros especialistas te preparando para a chegada do bebê, ao vivo.
@@ -400,11 +419,13 @@
           <div class="convite-foto"><img src="${FOTO_EVENTO}" alt="Dayane Dos Anjos" /></div>
           <div>
             <span class="convite-tag geral">Baby Talks · 22 de agosto</span>
-            <h2 class="convite-title">Vem nos <span class="accent">visitar</span> em Curitiba</h2>
+            <h2 class="convite-title">Venha nos <span class="accent">visitar</span> em Curitiba</h2>
             <p class="convite-desc">
-              O <strong>Baby Talks</strong> é um evento presencial: uma manhã inteira de preparação com a <strong>Dayane</strong> e outros especialistas para casais grávidos. Se você conhece alguém da região, passa o link.
+              O <strong>Baby Talks</strong> é um evento presencial: uma manhã inteira de preparação com a <strong>Dayane</strong> e outros especialistas para casais grávidos.
             </p>
-            ${dadosBase}
+            <p class="convite-quote">
+              Se você conhece uma gestante em Curitiba, ou que quer ir, <strong>compartilhe</strong>:
+            </p>
             <div class="btns-row">
               <button type="button" class="btn primary" id="btn-share">
                 Compartilhar
