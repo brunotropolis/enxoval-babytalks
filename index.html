@@ -7,7 +7,7 @@
 <title>Enxoval Descomplicado · Baby Talks</title>
 <meta name="description" content="Baixe o e-book gratuito de enxoval da Dayane Dos Anjos. Um guia completo para gestantes." />
 <meta property="og:title" content="Enxoval Descomplicado · Baby Talks" />
-<meta property="og:description" content="O guia gratuito da Dayane Dos Anjos para montar um enxoval completo, sem exagero e sem esquecimento." />
+<meta property="og:description" content="O guia gratuito da Dayane Dos Anjos: da roupinha ao quartinho, tudo que você precisa saber." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://enxoval.babytalks.com.br/og-image.jpg" />
 <meta property="og:url" content="https://enxoval.babytalks.com.br/" />
@@ -22,6 +22,7 @@
     --lilas-escuro: #6F7EB8;
     --magenta: #C95FA3;
     --magenta-suave: #D89FC4;
+    --magenta-escuro: #9B3775;
     --azul: #1F2A56;
     --azul-suave: rgba(31, 42, 86, 0.7);
     --azul-medio: rgba(31, 42, 86, 0.5);
@@ -48,61 +49,48 @@
     0%, 100% { box-shadow: 0 0 0 0 rgba(46, 166, 108, 0.45); }
     50% { box-shadow: 0 0 0 12px rgba(46, 166, 108, 0); }
   }
-  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  @keyframes float-cover {
+    0%, 100% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(-3deg) translateY(-12px); }
+  }
+  @keyframes spin-selo {
+    from { transform: rotate(-10deg); }
+    to { transform: rotate(350deg); }
+  }
+  @keyframes shine-selo {
+    0%, 100% { box-shadow: 0 12px 30px rgba(201, 95, 163, 0.35), 0 0 0 0 rgba(255, 255, 255, 0.55); }
+    50% { box-shadow: 0 12px 30px rgba(201, 95, 163, 0.45), 0 0 0 10px rgba(255, 255, 255, 0); }
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
-  /* ============ NAV ============ */
-  nav {
-    background: rgba(248, 247, 244, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    position: sticky; top: 0; z-index: 100;
-  }
-  .nav-inner {
-    max-width: 1120px; margin: 0 auto;
-    padding: 14px 24px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .nav-logo { text-decoration: none; display: inline-flex; align-items: center; }
-  .nav-logo img { height: 44px; width: auto; display: block; }
-  .nav-info { text-align: right; line-height: 1.25; }
-  .nav-info .data {
-    font-family: 'Anton', sans-serif;
-    font-size: 15px; letter-spacing: 0.14em;
-    color: var(--magenta); text-transform: uppercase;
-  }
-  .nav-info .chamada {
-    font-family: 'Fraunces', serif; font-style: italic;
-    font-size: 12px; color: var(--azul-suave); margin-top: 2px;
-  }
-
-  /* ============ HERO ============ */
+  /* ============ HERO (tudo dentro) ============ */
   .hero {
     background: linear-gradient(180deg, var(--lilas-claro) 0%, var(--lavanda) 55%, var(--branco-suave) 100%);
-    padding: 56px 0 88px;
+    padding: 48px 0 88px;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
   }
   .hero-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 64px;
-    align-items: center;
+    grid-template-columns: 1fr 360px;
+    gap: 72px;
+    align-items: start;
   }
-  .hero-tag {
+  .hero-content { max-width: 560px; }
+  .hero-brand {
     display: inline-block;
-    font-size: 10.5px; font-weight: 700;
-    letter-spacing: 0.28em; text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.24em;
     color: var(--magenta);
-    padding: 5px 14px;
-    background: white;
-    border-radius: 100px;
-    margin-bottom: 22px;
-    box-shadow: 0 2px 8px rgba(31, 42, 86, 0.06);
+    text-transform: uppercase;
+    margin-bottom: 26px;
   }
   .hero-headline {
     font-family: 'Fraunces', serif;
-    font-size: 46px;
-    line-height: 1.08;
+    font-size: 48px;
+    line-height: 1.06;
     color: var(--azul);
     letter-spacing: -0.018em;
     margin-bottom: 18px;
@@ -113,76 +101,101 @@
     font-size: 16px;
     color: var(--azul-suave);
     line-height: 1.7;
-    margin-bottom: 32px;
+    margin-bottom: 34px;
     max-width: 480px;
   }
   .hero-desc strong { color: var(--azul); font-weight: 600; }
 
-  /* capa do e-book — shape orgânica como as fotos do site principal */
+  /* ============ EBOOK COVER (animado + selo grande) ============ */
   .ebook-cover-wrap {
     position: relative;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 24px 8px;
   }
   .ebook-cover {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 0.72;
     border-radius: 80px 16px 60px 16px;
     overflow: hidden;
-    box-shadow: 0 28px 60px rgba(31, 42, 86, 0.18);
+    box-shadow: 0 28px 60px rgba(31, 42, 86, 0.20), 0 8px 20px rgba(31, 42, 86, 0.10);
     background: var(--lavanda);
-    aspect-ratio: 0.72;
-    transform: rotate(-2.5deg);
-    transition: transform 0.4s ease;
+    animation: float-cover 4.5s ease-in-out infinite;
   }
-  .ebook-cover:hover { transform: rotate(-1deg) translateY(-4px); }
-  .ebook-cover img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .ebook-selo {
+  .ebook-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* selo círculo — carimbo elaborado */
+  .selo {
     position: absolute;
-    top: 4px; right: 4px;
-    background: var(--magenta);
+    top: -6px;
+    right: -8px;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, var(--magenta-suave) 0%, var(--magenta) 50%, var(--magenta-escuro) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 14px 30px rgba(201, 95, 163, 0.4);
+    animation: shine-selo 2.6s ease-in-out infinite;
+    z-index: 3;
+  }
+  .selo::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1.5px dashed rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .selo-conteudo {
+    text-align: center;
     color: white;
-    padding: 8px 16px;
-    border-radius: 100px;
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.24em; text-transform: uppercase;
-    box-shadow: 0 8px 20px rgba(201, 95, 163, 0.32);
-    transform: rotate(6deg);
+    line-height: 1;
+    transform: rotate(-8deg);
+  }
+  .selo-conteudo .free {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    display: block;
+    text-shadow: 0 2px 4px rgba(155, 55, 117, 0.4);
+  }
+  .selo-conteudo .sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+    opacity: 0.95;
   }
 
-  /* ============ FORM ============ */
-  .form-section {
-    padding: 72px 0 96px;
-    background: var(--branco-suave);
-  }
+  /* ============ FORM (dentro do hero) ============ */
   .form-wrap {
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .form-eyebrow {
-    display: block;
-    text-align: center;
-    font-size: 10.5px; font-weight: 700;
-    letter-spacing: 0.28em; text-transform: uppercase;
-    color: var(--magenta);
-    margin-bottom: 12px;
+    margin-top: 8px;
+    padding: 28px 30px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(31, 42, 86, 0.08);
+    border: 1px solid var(--border);
+    max-width: 480px;
   }
   .form-title {
     font-family: 'Fraunces', serif;
-    text-align: center;
-    font-size: 30px;
-    line-height: 1.15;
+    font-size: 22px;
     color: var(--azul);
-    letter-spacing: -0.012em;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
   }
   .form-sub {
-    text-align: center;
     color: var(--azul-suave);
-    font-size: 14.5px;
-    margin-bottom: 32px;
+    font-size: 13.5px;
+    margin-bottom: 20px;
   }
-  form { display: flex; flex-direction: column; gap: 14px; }
+  form { display: flex; flex-direction: column; gap: 12px; }
   .field label {
     display: block;
     font-size: 12px;
@@ -193,7 +206,7 @@
   }
   .field input {
     width: 100%;
-    padding: 12px 14px;
+    padding: 11px 13px;
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     color: var(--azul);
@@ -207,37 +220,25 @@
     border-color: var(--magenta);
     box-shadow: 0 0 0 3px rgba(201, 95, 163, 0.12);
   }
-  .field input.error {
-    border-color: #d9455f;
-    background: #fff8f9;
-  }
-  .field .err {
-    display: none;
-    font-size: 12px;
-    color: #d9455f;
-    margin-top: 5px;
-  }
+  .field input.error { border-color: #d9455f; background: #fff8f9; }
+  .field .err { display: none; font-size: 12px; color: #d9455f; margin-top: 5px; }
   .field input.error ~ .err { display: block; }
 
-  .tri-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
+  .tri-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .tri-opt { position: relative; }
   .tri-opt input { position: absolute; opacity: 0; pointer-events: none; }
   .tri-opt label {
     display: block;
     text-align: center;
-    padding: 11px 8px;
+    padding: 9px 4px;
     background: white;
     border: 1px solid var(--border);
     border-radius: 8px;
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: var(--azul);
     cursor: pointer;
     transition: all 0.18s ease;
-    line-height: 1.2;
+    line-height: 1.15;
   }
   .tri-opt label:hover { border-color: var(--lilas); }
   .tri-opt input:checked + label {
@@ -248,8 +249,8 @@
   }
 
   .btn-submit {
-    margin-top: 10px;
-    padding: 15px 24px;
+    margin-top: 6px;
+    padding: 14px 24px;
     background: var(--verde);
     border: 2px solid var(--verde);
     color: white;
@@ -264,15 +265,6 @@
   .btn-submit:hover:not(:disabled) { background: var(--verde-bright); border-color: var(--verde-bright); }
   .btn-submit:disabled { opacity: 0.65; cursor: wait; animation: none; }
 
-  .privacy {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: var(--azul-medio);
-    margin-top: 14px;
-    line-height: 1.5;
-  }
-
   /* ============ FOOTER ============ */
   footer {
     padding: 20px 0 26px;
@@ -286,97 +278,101 @@
 
   /* ============ MOBILE ============ */
   @media (max-width: 860px) {
-    .hero { padding: 32px 0 56px; }
+    .hero {
+      padding: 24px 0 48px;
+      min-height: auto;
+    }
     .hero-layout {
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: 20px;
       text-align: center;
     }
-    .hero-content { order: 2; }
-    .ebook-cover-wrap { order: 1; max-width: 220px; margin: 0 auto; padding: 12px; }
-    .hero-headline { font-size: 32px; }
-    .hero-desc { font-size: 15px; margin: 0 auto 24px; }
-    .form-section { padding: 48px 0 64px; }
-    .form-title { font-size: 24px; }
-  }
-  @media (max-width: 480px) {
-    .nav-logo img { height: 36px; }
-    .nav-info .data { font-size: 13px; }
-    .nav-info .chamada { display: none; }
-    .hero-headline { font-size: 28px; }
+    .hero-content { max-width: 100%; margin: 0 auto; }
+    .ebook-cover-wrap {
+      order: -1;
+      max-width: 170px;
+      margin: 0 auto;
+      padding: 12px 8px 6px;
+    }
+    .ebook-cover {
+      max-width: 150px;
+      border-radius: 44px 10px 32px 10px;
+      animation-duration: 5s;
+    }
+    .selo {
+      width: 76px; height: 76px;
+      top: -2px; right: -8px;
+    }
+    .selo-conteudo .free { font-size: 20px; }
+    .selo-conteudo .sub { font-size: 8.5px; margin-top: 2px; }
+    .hero-brand { font-size: 12px; margin-bottom: 12px; }
+    .hero-headline { font-size: 28px; margin-bottom: 12px; }
+    .hero-desc { font-size: 15px; margin: 0 auto 22px; }
+    .form-wrap {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 22px 20px 24px;
+      text-align: left;
+    }
+    .form-title { font-size: 19px; }
+    .tri-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="https://babytalks.com.br" class="nav-logo" target="_blank" rel="noopener">
-      <img src="https://babytalks.com.br/images/logo-baby-talks.png" alt="Baby Talks" />
-    </a>
-    <div class="nav-info">
-      <div class="data"><span>22 · AGO</span></div>
-      <div class="chamada">Teatro Santo Anjo, Curitiba</div>
-    </div>
-  </div>
-</nav>
-
 <section class="hero">
   <div class="container">
     <div class="hero-layout">
       <div class="hero-content">
-        <span class="hero-tag">E-book gratuito</span>
+        <span class="hero-brand">Baby Talks</span>
         <h1 class="hero-headline">
           Um enxoval <span class="accent">completo</span>, sem exageros.
         </h1>
         <p class="hero-desc">
-          Um guia carinhoso da <strong>Dayane Dos Anjos</strong> para você montar o enxoval do seu bebê com clareza e economia, sabendo o que realmente precisa (e o que a indústria vende que você não vai usar).
+          Um guia carinhoso da <strong>Dayane Dos Anjos</strong> para você montar o enxoval do seu bebê com clareza. <strong>Da roupinha ao quartinho</strong>, tudo que você precisa saber, em um lugar só.
         </p>
+
+        <div class="form-wrap">
+          <h2 class="form-title">Onde a gente envia?</h2>
+          <p class="form-sub">Preencha e libere o download.</p>
+          <form id="lead-form" novalidate>
+            <div class="field">
+              <label for="nome">Qual é seu nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu primeiro nome" autocomplete="given-name" required />
+              <span class="err">Escreve seu primeiro nome.</span>
+            </div>
+            <div class="field">
+              <label for="telefone">WhatsApp com DDD</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(41) 99999-9999" inputmode="numeric" autocomplete="tel" required />
+              <span class="err">Confere seu número: DDD + 8 ou 9 dígitos.</span>
+            </div>
+            <div class="field">
+              <label>Fase da gestação</label>
+              <div class="tri-grid">
+                <div class="tri-opt"><input type="radio" id="tri-1" name="trimestre" value="primeiro" required><label for="tri-1">1º tri</label></div>
+                <div class="tri-opt"><input type="radio" id="tri-2" name="trimestre" value="segundo"><label for="tri-2">2º tri</label></div>
+                <div class="tri-opt"><input type="radio" id="tri-3" name="trimestre" value="terceiro"><label for="tri-3">3º tri</label></div>
+                <div class="tri-opt"><input type="radio" id="tri-4" name="trimestre" value="bebe_chegou"><label for="tri-4">Bebê chegou</label></div>
+              </div>
+              <span class="err" id="tri-err">Escolhe uma opção.</span>
+            </div>
+            <button type="submit" class="btn-submit" id="submit-btn">Quero o e-book</button>
+          </form>
+        </div>
       </div>
+
       <div class="ebook-cover-wrap">
         <div class="ebook-cover">
           <img src="ebook-capa.jpg" alt="Capa do e-book Enxoval Descomplicado" />
         </div>
-        <span class="ebook-selo">Grátis</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="form-section">
-  <div class="container">
-    <div class="form-wrap">
-      <span class="form-eyebrow">Receba agora</span>
-      <h2 class="form-title">Onde a gente envia?</h2>
-      <p class="form-sub">Preencha e libere o download.</p>
-
-      <form id="lead-form" novalidate>
-        <div class="field">
-          <label for="nome">Seu nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" autocomplete="given-name" required />
-          <span class="err">Escreve seu primeiro nome.</span>
-        </div>
-
-        <div class="field">
-          <label for="telefone">WhatsApp com DDD</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(41) 99999-9999" inputmode="numeric" autocomplete="tel" required />
-          <span class="err">Confere seu número: DDD + 8 ou 9 dígitos.</span>
-        </div>
-
-        <div class="field">
-          <label>Fase da gestação</label>
-          <div class="tri-grid">
-            <div class="tri-opt"><input type="radio" id="tri-1" name="trimestre" value="primeiro" required><label for="tri-1">1º trimestre</label></div>
-            <div class="tri-opt"><input type="radio" id="tri-2" name="trimestre" value="segundo"><label for="tri-2">2º trimestre</label></div>
-            <div class="tri-opt"><input type="radio" id="tri-3" name="trimestre" value="terceiro"><label for="tri-3">3º trimestre</label></div>
-            <div class="tri-opt"><input type="radio" id="tri-4" name="trimestre" value="bebe_chegou"><label for="tri-4">Bebê já chegou</label></div>
+        <div class="selo">
+          <div class="selo-conteudo">
+            <span class="free">GRÁTIS</span>
+            <span class="sub">é da Baby Talks pra você</span>
           </div>
-          <span class="err" id="tri-err">Escolhe uma opção.</span>
         </div>
-
-        <button type="submit" class="btn-submit" id="submit-btn">Quero o e-book</button>
-        <span class="privacy">Seus dados servem só para enviar o e-book e novidades do Baby Talks.</span>
-      </form>
+      </div>
     </div>
   </div>
 </section>
